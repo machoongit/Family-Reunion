@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Reunion</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h1>Family Reunion</h1>
+  <p id="status">Connecting...</p>
 
+  <script>
+    const socket = io();
+    socket.on('connect', () => {
+      document.getElementById('status').textContent = 'Connected! Server is alive.';
+    });
+  </script>
+</body>
+</html>
